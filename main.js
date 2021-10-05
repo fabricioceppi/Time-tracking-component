@@ -40,7 +40,7 @@ function initialize(data) {
 
       activity.classList.add("activity");
       activity.style.backgroundImage = `url(images/icon-${titleToLower}.svg)`;
-      previousTrack.textContent = data[i].timeframes.weekly.previous + "hrs";
+      previousTrack.textContent = "Last Week - " + data[i].timeframes.weekly.previous + "hrs";
       currentTrack.textContent = data[i].timeframes.weekly.current + "hrs";
       task.textContent = data[i].title;
       ellipsis.classList.add("ellipsis");
@@ -82,17 +82,17 @@ function initialize(data) {
     for (let i = 0; i < data.length; i++) {
       if (filter === "Weekly") {
         previousDisplayers[i].textContent =
-          data[i].timeframes.weekly.previous + "hrs";
+          "Last Week - " + data[i].timeframes.weekly.previous + "hrs";
         currentDisplayers[i].textContent =
           data[i].timeframes.weekly.current + "hrs";
       } else if (filter === 'Daily') {
         previousDisplayers[i].textContent =
-          data[i].timeframes.daily.previous + "hrs";
+          "Last Day - " + data[i].timeframes.daily.previous + "hrs";
         currentDisplayers[i].textContent =
           data[i].timeframes.daily.current + "hrs";
       } else {
         previousDisplayers[i].textContent =
-          data[i].timeframes.monthly.previous + "hrs";
+          "Last Month - " + data[i].timeframes.monthly.previous + "hrs";
         currentDisplayers[i].textContent =
           data[i].timeframes.monthly.current + "hrs";
       }
